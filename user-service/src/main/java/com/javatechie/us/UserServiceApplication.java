@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -40,7 +39,7 @@ public class UserServiceApplication {
     // @Retry(name = USER_SERVICE,fallbackMethod = "getAllAvailableProducts")
     public List<OrderDTO> displayOrders(@RequestParam("category") String category) {
         final String url = category == null ? BASEURL : BASEURL + "/" + category;
-        System.out.println("retry method called " + attempt++ + " times " + " at " + new Date());
+        // System.out.println("retry method called " + attempt++ + " times " + " at " + new Date());
         return restTemplate.getForObject(url, ArrayList.class);
     }
 
