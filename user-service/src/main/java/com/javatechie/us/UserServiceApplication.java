@@ -31,7 +31,7 @@ public class UserServiceApplication {
 
     private static final String BASEURL = "http://localhost:9191/orders";
 
-    private int attempt = 1;
+    // private int attempt = 1; // Using retry process
 
 
     @GetMapping("/displayOrders")
